@@ -20,6 +20,10 @@ object Constants {
 
     const val TIMER_UPDATE_INTERVAL = 50L
 
+    const val SHARED_PREFERENCES_NAME = "sharedPref"
+    const val KEY_FIRST_TIME_TOOGLE = "KEY_FIRST_TIME_TOOGLE"
+    const val KEY_NAME = "KEY_NAME"
+    const val KEY_WEIGHT = "KEY_WEIGHT"
 
     const val NOTIFICATION_CHANNEL_ID = "tracking_channel"
     const val NOTIFICATION_CHANNEL_NAME = "Tracking"

@@ -18,6 +18,8 @@ object Constants {
     const val POLYLINE_WIDTH = 10f
     const val MAP_ZOOM = 17f
 
+    const val CANCEL_TRACKING_DIALOG_TAG = "CancelDialog"
+
     const val TIMER_UPDATE_INTERVAL = 50L
 
     const val SHARED_PREFERENCES_NAME = "sharedPref"

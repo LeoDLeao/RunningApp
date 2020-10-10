@@ -10,9 +10,13 @@ import com.leoriegler.runningapp.R
 import com.leoriegler.runningapp.other.Constants.ACTION_SHOW_TRACKING_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    @set:Inject
+    var name = "User"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +25,11 @@ class MainActivity : AppCompatActivity() {
         navigateToTrackingFragmentIfNeeded(intent)
 
         setSupportActionBar(toolbar)
+        tvToolbarTitle.text = "Let's go, $name"
 
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
+
+        bottomNavigationView.setOnNavigationItemReselectedListener { /* NO-OP */ }
 
         navHostFragment.findNavController()
             .addOnDestinationChangedListener {_, destination, _ ->
@@ -34,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
 
     }
+
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
